@@ -1,33 +1,31 @@
-// PLACEHOLDER — à remplacer par l'écran « Coin Parent ».
 import { useApp } from '../../state/AppState';
-import { Avatar, Button, GlassCard, Screen } from '../../ui';
-import { Placeholder } from '../_shared/Placeholder';
+import { GlassCard, Screen } from '../../ui';
+import { ChildModeSection } from './ChildModeSection';
+import { ChildrenSection } from './ChildrenSection';
+import { ParentsSection } from './ParentsSection';
+import { SettingsSection } from './SettingsSection';
+import { joinNames } from './validation';
+import './parents.css';
 
+/** Accueil du Coin Parent. */
 export function ParentsHome() {
-  const { data, store, run } = useApp();
+  const { data } = useApp();
   if (!data) return null;
+  const others = data.parents.filter((p) => p.id !== data.me.id).map((p) => p.name);
+  const names = joinNames([data.me.name, ...others]);
+
   return (
-    <Screen title="Coin Parent" subtitle={`Famille ${data.family.name}`}>
-      <GlassCard>
-        <div className="row">
-          <Avatar emoji={data.me.emoji} name={data.me.name} size="md" />
-          <div className="grow">
-            <p style={{ fontWeight: 800 }}>{data.me.name}</p>
-            <p className="small muted">
-              {data.me.roleLabel} · code d’invitation <strong>{data.family.inviteCode}</strong>
-            </p>
-          </div>
-        </div>
+    <Screen title="Coin Parent" subtitle="Tout pour organiser la famille, en douceur">
+      <GlassCard strong>
+        <p className="par-welcome">
+          Bienvenue {names} <span className="emoji">💛</span>
+        </p>
+        <p className="small muted">Famille {data.family.name}</p>
       </GlassCard>
-      <Placeholder emoji="🛠️" title="Réglages de la famille">
-        Ici : enfants, bonnes actions, récompenses, missions, code parent et mode enfant.
-      </Placeholder>
-      {store.mode === 'supabase' && (
-        <Button variant="secondary" icon="logout" block onClick={() => void run((s) => s.signOut())}>
-          Se déconnecter
-        </Button>
-      )}
-      {store.mode === 'local' && <p className="small muted center">Mode local : les données restent sur cet appareil.</p>}
+      <ChildrenSection data={data} />
+      <ParentsSection data={data} />
+      <ChildModeSection />
+      <SettingsSection />
     </Screen>
   );
 }

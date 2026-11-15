@@ -1,0 +1,125 @@
+/* Écran « Compagnons » — classes préfixées cmp- */
+
+/* ===================== Illustration ===================== */
+.cmp-art {
+  display: block;
+  overflow: visible;
+  max-width: 100%;
+  height: auto;
+}
+/* fill-box seulement sur les groupes animés (sinon les rotate() des attributs SVG seraient décalés) */
+.cmp-art [class*='cmp-a-'] {
+  transform-box: fill-box;
+}
+.cmp-art.is-silhouette {
+  filter: brightness(0);
+  opacity: 0.16;
+}
+
+.cmp-art.is-animated .cmp-a-breathe {
+  transform-origin: 50% 100%;
+  animation: cmp-breathe 3.6s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-blink {
+  transform-origin: 50% 50%;
+  animation: cmp-blink 5.2s infinite;
+}
+.cmp-art.is-animated .cmp-a-doze {
+  transform-origin: 50% 100%;
+  animation: cmp-doze 4.5s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-wiggle {
+  transform-origin: 50% 95%;
+  animation: cmp-wiggle 2.6s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-peek {
+  transform-origin: 50% 100%;
+  animation: cmp-peek 3s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-sway {
+  transform-origin: 30% 100%;
+  animation: cmp-sway 3.6s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-twinkle {
+  transform-origin: 50% 50%;
+  animation: cmp-twinkle 2.4s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-glint {
+  transform-origin: 50% 50%;
+  animation: cmp-glint 3s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-glow {
+  animation: cmp-glow 3s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-float {
+  animation: cmp-float 3.2s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-zz {
+  animation: cmp-zz 3s ease-in-out infinite;
+}
+.cmp-art.is-animated .cmp-a-flap-l {
+  transform-origin: 100% 80%;
+  animation: cmp-flap 2.2s ease-in-out infinite;
+}
+
+@keyframes cmp-breathe {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1.02, 1.035); }
+}
+@keyframes cmp-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  93% { transform: scaleY(0.1); }
+  96% { transform: scaleY(1); }
+}
+@keyframes cmp-doze {
+  0%, 100% { transform: rotate(-1deg) scale(1); }
+  50% { transform: rotate(1deg) scale(1.012); }
+}
+@keyframes cmp-wiggle {
+  0%, 46%, 100% { transform: rotate(0deg); }
+  52% { transform: rotate(-5deg); }
+  60% { transform: rotate(5deg); }
+  68% { transform: rotate(-3.5deg); }
+  76% { transform: rotate(2deg); }
+  84% { transform: rotate(0deg); }
+}
+@keyframes cmp-peek {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-3px) rotate(-2deg); }
+  60% { transform: translateY(-1px) rotate(2deg); }
+}
+@keyframes cmp-sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes cmp-twinkle {
+  0%, 100% { transform: scale(0.55) rotate(0deg); opacity: 0.35; }
+  50% { transform: scale(1.1) rotate(45deg); opacity: 1; }
+}
+@keyframes cmp-glint {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.12) rotate(12deg); }
+}
+@keyframes cmp-glow {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
+@keyframes cmp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes cmp-zz {
+  0% { transform: translate(0, 4px); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translate(6px, -10px); opacity: 0; }
+}
+@keyframes cmp-flap {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-7deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp-art * {
+    animation: none !important;
+  }
+}

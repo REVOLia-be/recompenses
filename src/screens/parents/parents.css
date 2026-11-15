@@ -1,0 +1,214 @@
+.par-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.par-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.par-welcome {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.par-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.par-list > li + li {
+  border-top: 1px solid rgba(103, 65, 217, 0.1);
+}
+.par-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 64px;
+  padding: var(--s-2) var(--s-2);
+  width: 100%;
+  min-width: 0;
+}
+.par-row--button {
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--r-md);
+  min-height: 64px;
+}
+.par-row--button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.par-row--button:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 1px;
+}
+.par-row__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+}
+.par-row__name {
+  font-weight: 800;
+  color: var(--ink);
+}
+.par-row__sub {
+  display: block;
+}
+.par-row__icon {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+}
+.par-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.par-me {
+  font-weight: 700;
+  color: var(--raspberry-strong);
+}
+.par-note {
+  padding: var(--s-2) var(--s-2) var(--s-1);
+}
+.par-card-title {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--ink);
+}
+.par-invite {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.par-invite__code {
+  text-align: center;
+  font-size: clamp(26px, 9vw, 36px);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+  padding: var(--s-4) var(--s-2);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px dashed var(--violet-soft);
+  color: var(--violet);
+  user-select: all;
+  overflow-wrap: anywhere;
+}
+.par-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-3);
+}
+.par-actions--pair {
+  grid-template-columns: 1fr 1fr;
+}
+.par-alert {
+  padding: var(--s-3);
+  border-radius: var(--r-sm);
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-weight: 700;
+  text-align: center;
+}
+.par-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.par-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.par-form-preview {
+  display: flex;
+  justify-content: center;
+}
+.par-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+}
+.par-swatch {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  background: var(--sw);
+  box-shadow: 0 0 0 1px rgba(42, 33, 80, 0.18);
+  cursor: pointer;
+  padding: 0;
+}
+.par-swatch[aria-pressed='true'] {
+  box-shadow: 0 0 0 3px var(--violet);
+}
+.par-swatch[aria-pressed='true']::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: var(--violet);
+}
+.par-swatch:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+.par-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-5);
+  padding: var(--s-2) 0 var(--s-4);
+}
+.par-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-2);
+  text-align: center;
+}
+.par-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
+}
+.par-stat {
+  text-align: center;
+}
+.par-stat--main {
+  grid-column: 1 / -1;
+}
+.par-stat__value {
+  font-size: var(--fs-2xl);
+  font-weight: 900;
+  color: var(--ink);
+}
+.par-stat--main .par-stat__value {
+  font-size: var(--fs-3xl);
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
