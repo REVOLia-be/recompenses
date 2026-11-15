@@ -407,7 +407,7 @@
   display: grid;
   place-items: center;
   padding: max(var(--s-4), var(--safe-top)) var(--s-4) max(var(--s-4), var(--safe-bottom));
-  background: radial-gradient(circle at 50% 40%, rgba(255, 240, 250, 0.96), rgba(214, 196, 255, 0.96));
+  background: radial-gradient(circle at 50% 40%, #fff0fa, #dccbff);
   animation: cmp-fade-in 0.35s ease-out;
 }
 .cmp-reveal__box {
