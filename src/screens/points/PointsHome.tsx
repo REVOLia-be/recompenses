@@ -59,7 +59,7 @@ function ParentHome() {
                 ? 'Sélectionne un ou plusieurs enfants pour leur ajouter des bons points.'
                 : `Ajoute des bons points à ${kids[0].name} en deux taps.`}
             </p>
-            <div className="pts-kids">
+            <div className={`pts-kids${kids.length === 1 ? ' pts-kids--single' : ''}`}>
               {kids.map((c) => (
                 <KidTile
                   key={c.id}
