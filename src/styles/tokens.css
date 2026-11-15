@@ -1,0 +1,90 @@
+/* Jetons de design « Pépites » — pastel féerique. Toujours utiliser ces variables. */
+:root {
+  color-scheme: light;
+
+  /* Texte */
+  --ink: #2a2150;          /* bleu-nuit prune : texte principal */
+  --ink-soft: #564a78;     /* texte secondaire (AA sur verre) */
+  --ink-faint: #6e6390;    /* légendes (AA ≥ 14px gras) */
+  --on-accent: #ffffff;
+
+  /* Accents */
+  --raspberry: #d6336c;
+  --raspberry-strong: #b8245a;
+  --plum: #9c36b5;
+  --violet: #6741d9;
+  --violet-soft: #b197fc;
+  --gold: #f5b301;
+  --gold-deep: #d98a00;
+  --mint: #2f9e6e;
+  --danger: #c92a2a;
+  --danger-soft: #ffe3e3;
+  --success: #2b8a3e;
+
+  --grad-primary: linear-gradient(135deg, #d6336c 0%, #9c36b5 55%, #6741d9 100%);
+  --grad-gold: linear-gradient(135deg, #ffe066 0%, #fcc419 50%, #f59f00 100%);
+  --grad-progress: linear-gradient(90deg, #f783ac 0%, #cc5de8 55%, #845ef7 100%);
+
+  /* Ciel */
+  --sky-top: #e8e1ff;
+  --sky-mid: #ffe1ee;
+  --sky-low: #ffe9d9;
+  --page-bg: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 48%, var(--sky-low) 100%);
+
+  /* Verre dépoli */
+  --glass-bg: rgba(255, 255, 255, 0.58);
+  --glass-bg-strong: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.75);
+  --glass-blur: blur(18px) saturate(1.4);
+  --shadow-soft: 0 10px 30px -8px rgba(103, 65, 217, 0.22), 0 2px 6px rgba(42, 33, 80, 0.06);
+  --shadow-pop: 0 14px 34px -10px rgba(214, 51, 108, 0.45);
+
+  /* Avatars pastel (suggestions de couleurs pour Child.color) */
+  --avatar-1: #ffd6e7;
+  --avatar-2: #e5dbff;
+  --avatar-3: #d3f9d8;
+  --avatar-4: #ffe8cc;
+  --avatar-5: #d0ebff;
+  --avatar-6: #fff3bf;
+
+  /* Formes */
+  --r-xs: 10px;
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 26px;
+  --r-xl: 34px;
+  --r-pill: 999px;
+
+  /* Espacements */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+
+  /* Typo */
+  --font: 'Nunito', ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+  --fs-3xl: 34px;
+
+  /* Tactile / layout */
+  --tap: 48px;
+  --column: 480px;
+  --tabbar-h: 68px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  /* Espace à réserver en bas de chaque écran pour la barre d'onglets flottante */
+  --tabbar-space: calc(var(--tabbar-h) + 28px + var(--safe-bottom));
+
+  --focus-ring: 0 0 0 3px #fff, 0 0 0 6px var(--violet);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
