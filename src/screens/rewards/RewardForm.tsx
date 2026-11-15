@@ -8,7 +8,7 @@ import { ImagePickButton, RewardThumb } from './RewardBits';
 import { CATEGORY_SUGGESTIONS, resizeImage } from './rewardUtils';
 import './rewards.css';
 
-const COST_PRESETS = [5, 10, 20, 50, 100];
+const COST_PRESETS = [5, 10, 20, 50, 100, 200, 500];
 
 const MODES: ReadonlyArray<{ value: RewardMode; emoji: string; title: string; text: string }> = [
   {

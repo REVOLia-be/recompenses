@@ -47,13 +47,28 @@ export function NumberStepper({ value, onChange, label, min = 0, max = 999, step
           <input
             id={`${id}-input`}
             className="ui-stepper__input"
+            type="text"
             inputMode={min < 0 ? 'text' : 'numeric'}
+            pattern={min < 0 ? undefined : '[0-9]*'}
+            enterKeyHint="done"
+            autoComplete="off"
             aria-label={label}
+            title="Touche pour saisir un nombre"
             value={draft}
-            onChange={(e) => setDraft(e.target.value)}
+            onFocus={(e) => e.currentTarget.select()}
+            onChange={(e) => {
+              // Saisie directe : la valeur suit la frappe dès qu'elle est valide.
+              const text = min < 0 ? e.target.value : e.target.value.replace(/\D/g, '');
+              setDraft(text);
+              const n = parseInt(text.replace('−', '-'), 10);
+              if (Number.isFinite(n) && n >= min && n <= max) onChange(n);
+            }}
             onBlur={commit}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') commit();
+              if (e.key === 'Enter') {
+                commit();
+                e.currentTarget.blur();
+              }
               if (e.key === 'ArrowUp') {
                 e.preventDefault();
                 onChange(clamp(value + step));
