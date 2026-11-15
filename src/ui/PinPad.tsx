@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from './icons';
 import { cx } from './cx';
 
@@ -13,11 +13,13 @@ export interface PinPadProps {
 export function PinPad({ onComplete, length = 4, label = 'Code parent' }: PinPadProps) {
   const [pin, setPin] = useState('');
   const [error, setError] = useState(false);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     if (pin.length !== length) return;
     let alive = true;
-    Promise.resolve(onComplete(pin)).then((ok) => {
+    Promise.resolve(onCompleteRef.current(pin)).then((ok) => {
       if (!alive) return;
       if (ok === false) {
         setError(true);
@@ -30,7 +32,7 @@ export function PinPad({ onComplete, length = 4, label = 'Code parent' }: PinPad
     return () => {
       alive = false;
     };
-  }, [pin, length, onComplete]);
+  }, [pin, length]);
 
   const press = (d: string) => setPin((p) => (p.length < length ? p + d : p));
   const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', 'del'];

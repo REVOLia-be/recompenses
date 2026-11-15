@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd8c2"/>
+      <stop offset="0.5" stop-color="#ffc2dc"/>
+      <stop offset="1" stop-color="#cdb8ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.46" r="0.5">
+      <stop offset="0" stop-color="#fff7e0" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#fff7e0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe680"/>
+      <stop offset="0.55" stop-color="#ffc21a"/>
+      <stop offset="1" stop-color="#f59a00"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="236" r="200" fill="url(#glow)"/>
+  <path d="M0 420 C110 370 210 384 300 410 S450 400 512 380 V512 H0Z" fill="url(#hill)"/>
+  <path d="M256 92 L298 182 L396 194 L324 262 L343 360 L256 312 L169 360 L188 262 L116 194 L214 182 Z"
+        fill="url(#gold)" stroke="#e48a00" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M232 148 L214 186 L172 192" fill="none" stroke="#fff6cc" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <circle cx="226" cy="246" r="11" fill="#4a2a00"/>
+  <circle cx="286" cy="246" r="11" fill="#4a2a00"/>
+  <path d="M234 278 Q256 298 278 278" fill="none" stroke="#4a2a00" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="206" cy="270" r="10" fill="#ff8fb3" opacity="0.7"/>
+  <circle cx="306" cy="270" r="10" fill="#ff8fb3" opacity="0.7"/>
+  <path d="M410 84c3 22 13 32 35 35-22 3-32 13-35 35-3-22-13-32-35-35 22-3 32-13 35-35z" fill="#ffffff"/>
+  <path d="M112 330c2 14 8 20 22 22-14 2-20 8-22 22-2-14-8-20-22-22 14-2 20-8 22-22z" fill="#ffffff" opacity="0.9"/>
+  <path d="M398 300c2 12 7 17 19 19-12 2-17 7-19 19-2-12-7-17-19-19 12-2 17-7 19-19z" fill="#fff3b0"/>
+</svg>
