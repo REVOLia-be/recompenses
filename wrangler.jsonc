@@ -1,6 +1,6 @@
 {
   // Hébergement Cloudflare (Workers Static Assets) : site statique, aucun script Worker.
-  "name": "pepites",
+  "name": "recompenses",
   "compatibility_date": "2026-11-15",
   "assets": {
     "directory": "./dist",
