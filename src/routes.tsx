@@ -23,7 +23,7 @@ export const tabRoutes: RouteObject[] = [
 export const PARENT_ONLY_PREFIX = '/parents';
 
 export const TABS: TabItem[] = [
-  { to: '/', label: 'Bons points', icon: 'star', end: true },
+  { to: '/', label: 'Bons points', icon: 'star', end: true, alsoActiveOn: ['/actions', '/historique'] },
   { to: '/missions', label: 'Missions', icon: 'flag' },
   { to: '/compagnons', label: 'Compagnons', icon: 'face' },
   { to: '/cadeaux', label: 'Cadeaux', icon: 'gift' },

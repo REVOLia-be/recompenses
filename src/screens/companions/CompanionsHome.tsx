@@ -118,7 +118,7 @@ function CompanionView({ child, hue, canEdit }: ViewProps) {
               {name}
             </h2>
             {canEdit && (
-              <IconButton label={`Renommer ${name}`} icon="pencil" size="sm" onClick={() => setRenaming(true)} />
+              <IconButton label={`Renommer ${name}`} icon="pencil" onClick={() => setRenaming(true)} />
             )}
           </div>
           <p className="cmp-hero__owner">Compagnon de {child.name}</p>

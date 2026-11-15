@@ -302,7 +302,7 @@ function Tuft({ p, id, x = 100, top = 76, big, noStar }: { p: CompanionPalette; 
 }
 
 /** Petite queue en nuage (stades Grand et Légendaire). */
-function CloudTail({ id, p }: { id: string; p: CompanionPalette }) {
+function CloudTail({ p }: { p: CompanionPalette }) {
   return (
     <g className="cmp-a-sway">
       <g fill={p.line}>
@@ -408,7 +408,7 @@ function StageGrand({ id, p }: { id: string; p: CompanionPalette }) {
       <Shadow rx={54} />
       <Wings id={id} p={p} big={false} />
       <g className="cmp-a-breathe">
-        <CloudTail id={id} p={p} />
+        <CloudTail p={p} />
         <Tuft p={p} id={id} top={62} big />
         <ellipse cx={78} cy={173} rx={14} ry={8} fill={p.shade} stroke={p.line} strokeWidth={2.5} />
         <ellipse cx={122} cy={173} rx={14} ry={8} fill={p.shade} stroke={p.line} strokeWidth={2.5} />
@@ -435,7 +435,7 @@ function StageLegend({ id, p }: { id: string; p: CompanionPalette }) {
       <Shadow rx={56} />
       <Wings id={id} p={p} big />
       <g className="cmp-a-breathe">
-        <CloudTail id={id} p={p} />
+        <CloudTail p={p} />
         <Halo back />
         <Tuft p={p} id={id} top={62} big noStar />
         <Halo />
